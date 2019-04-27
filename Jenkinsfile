@@ -10,7 +10,7 @@ node('master') {
 
   // Build the docker image
   stage('Build') {
-    dockerImage = docker.build("acirustech")
+    dockerImage = docker.build("acirustech-master")
   }
 
 
