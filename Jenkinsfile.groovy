@@ -16,14 +16,12 @@ node("master") {
     ls /app/requirements.txt
     cat /app/app.py
     ls /app/templates/
-
-
     """)
 
   }
 
   //
   // stage("Deploy"){
-  // 
+  //
   // }
 }
