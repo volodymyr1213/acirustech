@@ -13,7 +13,7 @@ node("master") {
   stage('Push image') {
 
    // Push docker image to the Docker hub
-    docker.withRegistry('', 'sharifabdulcoder') {
+    docker.withRegistry('', 'ID') {
         app.push("0.1")
         app.push("latest")
     }
