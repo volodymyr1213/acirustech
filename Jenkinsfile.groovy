@@ -9,10 +9,9 @@ node("master") {
   }
 
   stage("Deploy"){
-      docker.run("sharifabdulcoder/fuchicorp")
+      sh "docker run -dti -p 81:5000 sharifabdulcoder/acirustech"
 
     }
-  
 }
 
 //
