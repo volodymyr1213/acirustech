@@ -7,14 +7,3 @@ node("master") {
   stage('Build') {
     acirustech = docker.build("fsadykov/acirustech")
   }
-
-  stage('Unites') {
-    acirustech.inside("""
-    #!/bin/bash
-    ls /app/requirements.txt
-    ls /app/app.py
-    ls /app/templates/
-    """)
-  }
-
-}
