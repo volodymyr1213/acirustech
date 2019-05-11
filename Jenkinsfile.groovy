@@ -7,3 +7,4 @@ node("master") {
   stage('Build') {
     acirustech = docker.build("fsadykov/acirustech")
   }
+}  
