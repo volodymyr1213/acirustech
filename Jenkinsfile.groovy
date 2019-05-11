@@ -10,18 +10,19 @@ node("master") {
   }
 
 
-  stage("Unites"){
-    acirrustech.inside("""
-    #!/bin/bash
-    ls /app/requirements.txt
-    cat /app/app.py
-    ls /app/templates/
-    """)
-
-  }
-
-  //
-  // stage("Deploy"){
+  // stage("Unites"){
+  //   acirrustech.inside("""
+  //   #!/bin/bash
+  //   ls /app/requirements.txt
+  //   cat /app/app.py
+  //   ls /app/templates/
+  //   """)
   //
   // }
+
+
+  stage("Deploy"){
+  docker.run("sharifabdulcoder/fuchicorp")
+
+  }
 }
