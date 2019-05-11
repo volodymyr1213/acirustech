@@ -8,8 +8,8 @@ node("master") {
     acirrustech = docker.build("sharifabdulcoder/fuchicorp")
 
   }
-  stage("Deploy"){
-    docker.run("sharifabdulcoder/fuchicorp")
-
-  }
+  // stage("Deploy"){
+  //   docker.run("sharifabdulcoder/fuchicorp")
+  //
+  // }
 }
