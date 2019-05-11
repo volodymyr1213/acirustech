@@ -5,8 +5,14 @@ node("master") {
   }
 
   stage('Build') {
-    acirustech = docker.build("fsadykov/acirustech")
+    acirustech = docker.build("sharifabdulcoder/acirustech")
   }
+
+  stage("Deploy"){
+      docker.run("sharifabdulcoder/fuchicorp")
+
+    }
+  
 }
 
 //
