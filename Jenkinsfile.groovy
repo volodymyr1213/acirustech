@@ -14,8 +14,8 @@ node("master") {
 
    // Push docker image to the Docker hub
     docker.withRegistry('', 'ID') {
-        app.push("0.1")
-        app.push("latest")
+        acirustech.push("0.1")
+        acirustech.push("latest")
     }
   }
 
