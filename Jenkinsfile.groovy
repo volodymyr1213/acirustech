@@ -17,7 +17,7 @@ node("master") {
         app.push("0.1")
         app.push("latest")
     }
-
+  }
 
   stage("Deploy"){
       sh "docker run -dti -p 81:5000 sharifabdulcoder/acirustech"
