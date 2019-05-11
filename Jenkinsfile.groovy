@@ -22,7 +22,7 @@ node("master") {
 
 
   stage("Deploy"){
-  docker.run("sharifabdulcoder/fuchicorp")
+    docker.run("sharifabdulcoder/fuchicorp")
 
   }
 }
