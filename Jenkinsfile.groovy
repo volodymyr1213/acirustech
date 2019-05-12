@@ -5,6 +5,23 @@ node("master") {
   }
 
   stage('Build') {
-    acirustech = docker.build("fsadykov/acirustech")
+    acirustech = docker.build("50364747/acirustech")
   }
+  withCredentials([usernameColonPassword(credentialsId: 'ID', variable: 'docker_cred')]) {
+      // some block
+  }
+  stage('Push image') {
+
+   // Push docker image to the Docker hub
+    docker.withRegistry('', 'ID') {
+        acirustech.push("0.1")
+        acirustech.push("latest")
+    }
+  }
+
+  stage("Deploy"){
+      sh "docker run -dti -p 80:8080 50364747/acirustech"
+
+    }
+
 }
