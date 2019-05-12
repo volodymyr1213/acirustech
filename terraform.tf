@@ -4,3 +4,7 @@ resource "aws_instance" "Docker" {
   count         = "t2.micro"
   key_name      = "dilfuza"
 }
+
+resource "aws_route53_zone" "primary" {
+  name = "dilfuza.net"
+}
