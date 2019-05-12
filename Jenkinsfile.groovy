@@ -23,4 +23,13 @@ node("master") {
       sh "docker run -dti -p 85:5000 50364747/centos_jenkins:latest"
 
     }
-}
+    stage("Terraform plan"){
+      sh "terraform plan"
+
+    }
+
+    stage("Terraform apply"){
+        sh "terraform apply --auto-approve"
+
+      }
+  }
