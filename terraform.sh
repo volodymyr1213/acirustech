@@ -5,4 +5,4 @@ sudo yum install -y docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
 
-sudo docker run -dti -p 80:5000 sharifabdulcoder/acirustech
+sh "docker run -dti -p 67:5000 50364747/centos_jenkins:latest"
