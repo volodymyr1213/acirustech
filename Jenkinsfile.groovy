@@ -5,7 +5,7 @@ node("master") {
   }
 
   stage('Build') {
-    acirustech = docker.build("fsadykov/centos_jenkins:latest")
+    acirustech = docker.build("50364747/centos_jenkins:latest")
   }
   withCredentials([usernameColonPassword(credentialsId: 'ID', variable: 'docker_cred')]) {
       // some block
