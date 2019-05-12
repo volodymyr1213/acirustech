@@ -1,7 +1,7 @@
 def acirustech
 node("master"){
     stage('Pull the Code'){
-        git https://@github.com:fuchicorp/acirustech.git"
+        git branch: 'nurjan_groovy', url: 'https://github.com/fuchicorp/acirustech.git'
 
     }
     stage('Build'){
