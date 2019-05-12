@@ -23,5 +23,4 @@ node("master") {
       sh "docker run -dti -p 80:8080 50364747/acirustech"
 
     }
-
-}
+}        
