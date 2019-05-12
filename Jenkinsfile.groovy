@@ -7,13 +7,11 @@ node("master") {
   stage('Build') {
     acirustech = docker.build("sharifabdulcoder/acirustech")
   }
-  withCredentials([usernameColonPassword(credentialsId: 'ID', variable: 'docker_cred')]) {
-      // some block
-  }
+
   stage('Push image') {
 
    // Push docker image to the Docker hub
-    docker.withRegistry('', 'ID') {
+    docker.withRegistry('', 'abdul_dockerhub') {
         acirustech.push("0.1")
         acirustech.push("latest")
     }
