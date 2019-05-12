@@ -17,9 +17,14 @@ node("master") {
     }
   }
 
-  stage("Deploy"){
-      sh "docker run -dti -p 81:5000 sharifabdulcoder/acirustech"
+  stage("Terraform plan"){
+      sh "terraform plan"
 
     }
+
+    stage("Terraform apply"){
+        sh "terraform apply --auto-approve"
+
+      }
 
 }
