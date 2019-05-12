@@ -18,6 +18,7 @@ node("master") {
   }
 
   stage("Terraform plan"){
+      sh "terraform init"
       sh "terraform plan"
 
     }
