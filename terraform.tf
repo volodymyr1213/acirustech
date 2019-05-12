@@ -5,6 +5,6 @@ resource "aws_instance" "Docker" {
   key_name      = "dilfuza"
 }
 
-resource "aws_route53_zone" "primary" {
+resource "aws_route53_zone" "docker" {
   name = "dilfuza.net"
 }
