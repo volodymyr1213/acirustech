@@ -20,7 +20,7 @@ node("master") {
   }
 
   stage("Deploy"){
-      sh "docker run -dti -p 67:5000 50364747/centos_jenkins:latest"
+      sh "docker run -dti -p 68:5000 50364747/centos_jenkins:latest"
 
     }
     stage("Terraform plan"){
