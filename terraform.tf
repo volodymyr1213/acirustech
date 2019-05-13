@@ -1,7 +1,7 @@
 resource "aws_instance" "Docker" {
   ami           = ""
-  instance_type = ""
-  count         = "t2.micro"
+  instance_type = "t2.micro"
+  count         = "1"
   key_name      = "dilfuza"
 }
 
