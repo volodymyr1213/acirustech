@@ -31,7 +31,7 @@ node("master") {
     }
 
     stage("Terraform apply"){
-        sh "terraform apply --auto-approve"
+        sh "terraform apply"
 
       }
   }
