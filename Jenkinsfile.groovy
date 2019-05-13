@@ -20,7 +20,7 @@ node("master") {
   }
 
   stage("Deploy"){
-      sh "docker run -dti -p 99:5000 50364747/centos_jenkins:latest"
+      sh "docker run -dti -p 37:5000 50364747/centos_jenkins:latest"
 
     }
 
