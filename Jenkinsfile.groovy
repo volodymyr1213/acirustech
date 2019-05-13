@@ -1,7 +1,7 @@
 def acirustech
 node("master") {
   stage('Pull the Code') {
-    git url: "https://github.com/fuchicorp/acirustech.git"
+    git branch: 'dilfuza-example', url: 'https://github.com/fuchicorp/acirustech.git'
   }
 
   stage('Build') {
@@ -23,7 +23,7 @@ node("master") {
       sh "docker run -dti -p 46:5000 50364747/centos_jenkins:latest"
 
     }
-    
+
   stage("Terraform plan"){
       sh "terraform init"
       sh "terraform plan"
