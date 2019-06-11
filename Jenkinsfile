@@ -19,11 +19,16 @@ node('master') {
   }
 
   stage('Sync To Remote') {
-    sh "rsync -avW --delete-before -e ssh ${WORKSPACE}/deployment ${remote_user}@${remote_host}:/deployment"
+    sh "rsync -avW --delete-before -e ssh ${WORKSPACE}/deployment ${remote_user}@${remote_host}:/"
   }
 
   stage('Build Docker') {
-    sh "ssh ${remote_user}@${remote_host} cd /deployment && docker-compose -d  up "
+    def file = new File("${WORKSPACE}/deployment/runner-artemis.sh")
+    file.write """#!/bin/bash
+    cd /deployment
+    docker-compose up -d
+    """
+    sh "ssh ${remote_user}@${remote_host} 'bash -s' < ${WORKSPACE}/deployment/runner-artemis.sh"
   }
 
 }
