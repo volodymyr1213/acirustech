@@ -23,7 +23,12 @@ node('master') {
   }
 
   stage('Build Docker') {
-    sh ""
+    sh "ssh ${remote_user}@${remote_host} docker build -t artemis -f /artemis"
+  }
+
+
+  stage('Run/App') {
+    sh "ssh ${remote_user}@${remote_host} docker run -dti -p 80:5000 artemis "
   }
 
 
