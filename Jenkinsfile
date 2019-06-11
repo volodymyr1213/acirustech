@@ -26,6 +26,7 @@ node('master') {
     def file = new File("${WORKSPACE}/deployment/runner-artemis.sh")
     file.write """#!/bin/bash
     cd /deployment
+    docker-compose up --build
     docker-compose up -d
     """
     sh "ssh ${remote_user}@${remote_host} 'bash -s' < ${WORKSPACE}/deployment/runner-artemis.sh"
