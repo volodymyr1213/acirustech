@@ -1,7 +1,7 @@
 
 
 def remote_user = 'root'
-def remote_host = '34.253.221.145'
+def remote_host = '100.24.34.8'
 
 
 node('master') {
