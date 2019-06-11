@@ -23,7 +23,7 @@ node('master') {
   }
 
   stage('Build Docker') {
-    sh "ssh ${remote_user}@${remote_host} cd /deployment && docker-compose up -d  "
+    sh "ssh ${remote_user}@${remote_host} cd /deployment && docker-compose -d  up "
   }
 
 }
